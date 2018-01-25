@@ -48,7 +48,7 @@ template<typename T>
 typename std::enable_if<is_stl_container<T>::value,void>::type 
 print(const T& ip, std::ostream& os)
 {
-	std::ostream_iterator<T::value_type> out_it(os, ".");
+	std::ostream_iterator<typename T::value_type> out_it(os, ".");
 	std::copy(ip.begin(), ip.end(), out_it);
 	os << '\b';  os << " "; // delete last "."
 	os << std::endl;
