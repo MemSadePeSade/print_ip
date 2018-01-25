@@ -8,7 +8,7 @@ script:
 
 after_success:
 - sudo apt-get install doxygen graphviz
-- ./publish-doxygen
+- ./publish-doxygen.sh
 
 deploy:
   provider: script
