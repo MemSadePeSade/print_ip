@@ -10,7 +10,7 @@ branches:
 # Environment variables
 env:
   global:
-- GH_REPO_REF: https://github.com/MemSadePeSade/print_ip.git
+    - GH_REPO_REF: https://github.com/MemSadePeSade/print_ip.git
 
 
 
@@ -28,12 +28,12 @@ addons:
 
 
 script:
-- cmake .
-- cmake --build .
-- cmake --build . --target package
-- cd docs
-- doxygen collab.dox
-- cd ..
+  - cmake .
+  - cmake --build .
+  - cmake --build . --target package
+  - cd docs
+  - doxygen collab.dox
+  - cd ..
 
 
 deploy:
