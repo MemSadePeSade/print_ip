@@ -43,9 +43,8 @@ deploy:
 
   provider: pages
   skip_cleanup: true
-  local_dir: 
   github_token: $GITHUB_API_KEY
-  local_dir: 
+  local_dir: /docs/html
   on:
     branch: master
 
