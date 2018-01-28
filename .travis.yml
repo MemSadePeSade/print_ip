@@ -43,8 +43,9 @@ deploy:
 
   provider: pages
   skip_cleanup: true
-  local_dir: $TRAVIS_BUILD_DIR/docs/html
+  local_dir: /docs/html
   github_token: $GITHUB_API_KEY
+  local_dir: 
   on:
     branch: master
 
