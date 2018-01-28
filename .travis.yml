@@ -43,7 +43,7 @@ deploy:
 
   provider: pages
   skip_cleanup: true
-  local_dir: /docs/html
+  local_dir: 
   github_token: $GITHUB_API_KEY
   local_dir: 
   on:
