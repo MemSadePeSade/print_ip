@@ -7,6 +7,15 @@ branches:
   only:
     - master
 
+# Environment variables
+env:
+  global:
+- GH_REPO_REF: https://github.com/MemSadePeSade/print_ip.git
+
+
+
+
+
 # Install dependencies
 addons:
   apt:
