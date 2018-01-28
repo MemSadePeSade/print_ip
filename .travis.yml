@@ -32,7 +32,7 @@ script:
   - cmake --build .
   - cmake --build . --target package
   - cd docs
-  - doxygen collab.dox
+  - doxygen Doxyfile
   - cd ..
 
 
