@@ -1,19 +1,11 @@
 language: cpp
 
-# This will run on Travis' 'new' container-based infrastructure
 sudo: false
 
 # Blacklist
 branches:
-  except:
-    - gh-pages
-
-# Environment variables
-env:
-  global:
-    - GH_REPO_NAME: print_ip
-    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
-    - GH_REPO_REF: github.com/MemSadePeSade/print_ip.git
+  only:
+    - master
 
 # Install dependencies
 addons:
@@ -30,13 +22,19 @@ script:
 - cmake .
 - cmake --build .
 - cmake --build . --target package
+- cd docs
+- doxygen collab.dox
 
-after_success:
-  - cd $TRAVIS_BUILD_DIR
-  - chmod +x generateDocumentationAndDeploy.sh
-  - ./generateDocumentationAndDeploy.sh
 
 deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: $TRAVIS_BUILD_DIR/docs/html
+  github_token: $GITHUB_API_KEY
+  on:
+    branch: master
+
+
   provider: script
   skip_cleanup: true
   script:
