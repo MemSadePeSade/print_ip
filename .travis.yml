@@ -33,7 +33,6 @@ script:
   - cmake --build . --target package
   - cd docs
   - doxygen Doxyfile
-  - cd ..
 
 
 deploy:
